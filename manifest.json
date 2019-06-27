@@ -1,0 +1,6 @@
+{
+  "name": "PracticaCalendario",
+  "short_name": "PracticaCalendario",
+  "start_url": "/",
+  "display": "standalone"
+}
