@@ -3,7 +3,7 @@ import { LitElement, html } from 'lit-element';
 
 // Extend the LitElement base class
 class FechaCompletaElement extends LitElement {
-  contructor() {
+  constructor() {
     super();
   }
 

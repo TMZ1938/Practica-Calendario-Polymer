@@ -31,7 +31,7 @@ class CalendarioApp extends LitElement {
       </style>
       <timer-element></timer-element>
       <fecha-completa-element></fecha-completa-element>
-      <mes-element></dia-element>            
+      <mes-element></mes-element>            
     `;
   }
 
