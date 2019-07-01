@@ -20,5 +20,12 @@ class ServiceApi {
 
     }
 
-    
+    fechaCompleta() {
+
+    }
+
+    getTime() {
+        
+    }
+
 }
