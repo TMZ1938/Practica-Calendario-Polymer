@@ -1,8 +1,7 @@
 import { LitElement, html } from 'lit-element';
-import './mes/dia/dia-element.js';
 import './timer/timer-element.js';
 import './fechacompleta/fecha-completa-element.js';
-import './flecha/flecha-element.js'
+import './mes/mes-element.js';
 
 /**
  * @customElement
@@ -31,9 +30,8 @@ class CalendarioApp extends LitElement {
         }
       </style>
       <timer-element></timer-element>
-      <dia-element></dia-element>
-      <flecha-element></flecha-element>
       <fecha-completa-element></fecha-completa-element>
+      <mes-element></dia-element>            
     `;
   }
 
