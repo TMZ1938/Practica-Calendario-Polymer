@@ -3,9 +3,6 @@ import { LitElement, html } from 'lit-element';
 
 // Extend the LitElement base class
 class FechaCompletaElement extends LitElement {
-  constructor() {
-    super();
-  }
 
   /**
    * Implement `render` to define a template for your element.

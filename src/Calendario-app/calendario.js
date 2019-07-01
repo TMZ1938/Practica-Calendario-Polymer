@@ -10,6 +10,17 @@ import './mes/mes-element.js';
 
 class CalendarioApp extends LitElement {
 
+  static get properties() {
+    return {
+      date: { type: String }
+    };
+  }
+
+  constructor() {
+    super();
+    this._date = '';
+  }
+
   /**
    * Implement `render` to define a template for your element.
    *
@@ -29,9 +40,10 @@ class CalendarioApp extends LitElement {
           display: block;
         }
       </style>
+      <h1>${this.date}</h1>
       <timer-element></timer-element>
       <fecha-completa-element></fecha-completa-element>
-      <mes-element></mes-element>            
+      <mes-element></mes-element>
     `;
   }
 
