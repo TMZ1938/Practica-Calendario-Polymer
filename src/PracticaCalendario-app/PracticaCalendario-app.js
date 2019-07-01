@@ -2,6 +2,7 @@ import { LitElement, html } from 'lit-element';
 import './dia-element.js';
 import './timer-element.js';
 import './fecha-completa-element.js';
+import './flecha-element.js';
 
 /**
  * @customElement
@@ -27,12 +28,13 @@ class PracticaCalendarioApp extends LitElement {
       <style>
         :host {
           display: block;
+          color:red;
         }
       </style>
       <timer-element></timer-element>
       <dia-element></dia-element>
+      <flecha-element></flecha-element>
       <fecha-completa-element></fecha-completa-element>
-
     `;
   }
 
