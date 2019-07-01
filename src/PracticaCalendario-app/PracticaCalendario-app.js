@@ -1,5 +1,5 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-
+import './dia-element.js';
 /**
  * @customElement
  * @polymer
@@ -13,16 +13,17 @@ class PracticaCalendarioApp extends PolymerElement {
         }
       </style>
       <h2>Hello [[prop1]]!</h2>
+      <dia-element></dia-element>
     `;
   }
   static get properties() {
     return {
       prop1: {
         type: String,
-        value: 'PracticaCalendario-app'
+        value: 'calendario-app'
       }
     };
   }
 }
 
-window.customElements.define('PracticaCalendario-app', PracticaCalendarioApp);
+window.customElements.define('calendario-app', PracticaCalendarioApp);
