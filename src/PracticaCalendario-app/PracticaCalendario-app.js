@@ -1,29 +1,35 @@
-import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
+import { LitElement, html } from 'lit-element';
 import './dia-element.js';
 /**
  * @customElement
  * @polymer
  */
-class PracticaCalendarioApp extends PolymerElement {
-  static get template() {
+
+class PracticaCalendarioApp extends LitElement {
+
+  /**
+   * Implement `render` to define a template for your element.
+   *
+   * You must provide an implementation of `render` for any element
+   * that uses LitElement as a base class.
+   */
+  render(){
+    /**
+     * `render` must return a lit-html `TemplateResult`.
+     *
+     * To create a `TemplateResult`, tag a JavaScript template literal
+     * with the `html` helper function:
+     */
     return html`
       <style>
         :host {
           display: block;
         }
       </style>
-      <h2>Hello [[prop1]]!</h2>
       <dia-element></dia-element>
     `;
   }
-  static get properties() {
-    return {
-      prop1: {
-        type: String,
-        value: 'calendario-app'
-      }
-    };
-  }
+
 }
 
-window.customElements.define('calendario-app', PracticaCalendarioApp);
+customElements.define('calendario-app', PracticaCalendarioApp);
