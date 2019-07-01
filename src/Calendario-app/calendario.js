@@ -1,14 +1,14 @@
 import { LitElement, html } from 'lit-element';
-import './dia-element.js';
-import './timer-element.js';
-import './fecha-completa-element.js';
+import './mes/dia/dia-element.js';
+import './timer/timer-element.js';
+import './fechacompleta/fecha-completa-element.js';
 
 /**
  * @customElement
  * @polymer
  */
 
-class PracticaCalendarioApp extends LitElement {
+class CalendarioApp extends LitElement {
 
   /**
    * Implement `render` to define a template for your element.
@@ -38,4 +38,4 @@ class PracticaCalendarioApp extends LitElement {
 
 }
 
-customElements.define('calendario-app', PracticaCalendarioApp);
+customElements.define('calendario-app', CalendarioApp);
