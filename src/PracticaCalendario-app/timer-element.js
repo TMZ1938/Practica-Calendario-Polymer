@@ -1,12 +1,8 @@
+// Import the LitElement base class and html helper function
 import { LitElement, html } from 'lit-element';
-import './dia-element.js';
-import './timer-element.js';
-/**
- * @customElement
- * @polymer
- */
 
-class PracticaCalendarioApp extends LitElement {
+// Extend the LitElement base class
+class TimerElement extends LitElement {
 
   /**
    * Implement `render` to define a template for your element.
@@ -22,17 +18,10 @@ class PracticaCalendarioApp extends LitElement {
      * with the `html` helper function:
      */
     return html`
-      <style>
-        :host {
-          display: block;
-        }
-      </style>
-      <timer-element></timer-element>
-      <dia-element></dia-element>
-
+      <!-- template content -->
+      <p>Se muestra el timer</p>
     `;
   }
-
 }
-
-customElements.define('calendario-app', PracticaCalendarioApp);
+// Register the new element with the browser.
+customElements.define('timer-element', TimerElement);
