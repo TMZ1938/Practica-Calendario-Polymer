@@ -1,8 +1,16 @@
 // Import the LitElement base class and html helper function
 import { LitElement, html } from 'lit-element';
+import { mesSiguiente, mesPrevio } from '../../redux/actions/actions'
 
 // Extend the LitElement base class
 class FlechaElement extends LitElement {
+
+  mesSiguiente() {
+    store.dispatch(incrementarContador());
+  }
+  mesPrevio() {
+    store.dispatch(decrementarContador());
+  }
 
   /**
    * Implement `render` to define a template for your element.
@@ -18,8 +26,9 @@ class FlechaElement extends LitElement {
      * with the `html` helper function:
      */
     return html`
-      <!-- template content -->
-      <p>Se muestra la flecha</p>
+    <hr>
+    <button @click="${this.mesSiguiente}">Subir Mes</button>
+    <button @click="${this.mesPrevio}">Bajar Mes</button>
     `;
   }
 }

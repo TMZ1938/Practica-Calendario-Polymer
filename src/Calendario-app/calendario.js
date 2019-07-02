@@ -1,4 +1,7 @@
 import { LitElement, html } from 'lit-element';
+import { connect } from 'pwa-helpers';
+import { store } from './redux/store';
+
 import './timer/timer-element.js';
 import './fechacompleta/fecha-completa-element.js';
 import './mes/mes-element.js';
@@ -8,7 +11,7 @@ import './mes/mes-element.js';
  * @polymer
  */
 
-class CalendarioApp extends LitElement {
+class CalendarioApp extends connect(store)(LitElement) {
 
   static get properties() {
     return {
@@ -19,6 +22,11 @@ class CalendarioApp extends LitElement {
   constructor() {
     super();
     this._date = '';
+  }
+
+  stateChanged(state) {
+    console.log('statechanged', state);
+    this.date = state.date;
   }
 
   /**
