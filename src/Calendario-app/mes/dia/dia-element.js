@@ -1,5 +1,5 @@
 // Import the LitElement base class and html helper function
-import { LitElement, html } from 'lit-element';
+import { LitElement, html, css } from 'lit-element';
 
 // Extend the LitElement base class
 class DiaElement extends LitElement {
@@ -14,6 +14,30 @@ class DiaElement extends LitElement {
     super();
     this._day = '';
   }
+
+  static get styles() {
+    return css`
+    :host {
+      display: flex;
+    }
+    
+    div {
+      width: 15px;
+      height: 15px;
+      padding: 10px;
+      margin: 10px;
+    }
+
+    :hover {
+      
+      border: 2px solid grey
+    }
+    
+    :active {
+      /*background-color: blue;*/
+      border: 2px solid blue;  
+    }`;
+  } 
 
   /**
    * Implement `render` to define a template for your element.
@@ -30,7 +54,7 @@ class DiaElement extends LitElement {
      */
     return html`
       <!-- template content -->
-      <p>Se muestra el día</p>
+      <div>${this.day}</div>
     `;
   }
 }
