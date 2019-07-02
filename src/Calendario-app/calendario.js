@@ -25,7 +25,7 @@ class CalendarioApp extends connect(store)(LitElement) {
   }
 
   stateChanged(state) {
-    console.log('statechanged', state);
+    console.log('statechanged CalendarioApp', state);
     this.date = state.date;
   }
 

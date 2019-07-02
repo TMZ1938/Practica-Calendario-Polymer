@@ -1,9 +1,25 @@
 // Import the LitElement base class and html helper function
 import { LitElement, html } from 'lit-element';
+import { connect } from 'pwa-helpers';
+import { store } from '../redux/store';
+
+import { ServiceApi } from '../services/service-api';
 
 // Extend the LitElement base class
-class FechaCompletaElement extends LitElement {
+class FechaCompletaElement extends connect(store)(LitElement) {
 
+  constructor() {
+    super();
+    this._date = '';
+    this.literalMesActual = ''
+  }
+
+  stateChanged(state) {
+    console.log('statechanged FechaCompletaElement', state);
+    this.date = state.date;
+    this.literalMesActual = ServiceApi.getLiteralMesDesdeFecha(this.date);
+    // Llamar a update
+  }
   /**
    * Implement `render` to define a template for your element.
    *
@@ -19,7 +35,7 @@ class FechaCompletaElement extends LitElement {
      */
     return html`
       <!-- template content -->
-      <p>Se muestra la fecha completa</p>
+      <h1>${this.literalMesActual}</h1>
     `;
   }
 }

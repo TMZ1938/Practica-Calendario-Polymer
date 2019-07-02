@@ -10,12 +10,12 @@ export const reducer = (state = estadoInicial, action) => {
     case "MES_SIGUIENTE":
       return {
         ...state,
-        date: ServiceApi.getMesSiguiente() //Sumar un mes a la fecha actual
+        date: ServiceApi.getMesSiguienteFechaCompleta(state.date) //Sumar un mes a la fecha actual
       }
     case "MES_PREVIO":
         return {
           ...state,
-          date: ServiceApi.getMesPrevio() //Restar un mes a la fecha actual
+          date: ServiceApi.getMesPrevioFechaCompleta(state.date) //Restar un mes a la fecha actual
         }    
     default:
       return state;
