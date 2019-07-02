@@ -1,15 +1,16 @@
 // Import the LitElement base class and html helper function
 import { LitElement, html } from 'lit-element';
-import { mesSiguiente, mesPrevio } from '../../redux/actions/actions'
+import { mesSiguiente, mesPrevio } from '../../redux/actions/actions';
+import { store } from '../../redux/store';
 
 // Extend the LitElement base class
 class FlechaElement extends LitElement {
 
   mesSiguiente() {
-    store.dispatch(incrementarContador());
+    store.dispatch(mesSiguiente());
   }
   mesPrevio() {
-    store.dispatch(decrementarContador());
+    store.dispatch(mesPrevio());
   }
 
   /**

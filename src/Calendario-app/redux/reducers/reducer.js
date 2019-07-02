@@ -1,6 +1,7 @@
+import { ServiceApi } from '../../services/service-api';
 // definimos un estado inicial. Si no se tiene estado, al arrancar la aplicación, se tomarán estos valores.
 const estadoInicial = {
-  date: Date.now()    
+  date: ServiceApi.getTime()
 }
 
 // creamos y exportamos la función del reducer
