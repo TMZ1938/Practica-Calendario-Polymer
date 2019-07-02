@@ -4,6 +4,17 @@ import { LitElement, html } from 'lit-element';
 // Extend the LitElement base class
 class DiaElement extends LitElement {
 
+  static get properties() {
+    return {
+      day: {type: String} 
+    };
+  }
+
+  constructor() {
+    super();
+    this._day = '';
+  }
+
   /**
    * Implement `render` to define a template for your element.
    *

@@ -1,8 +1,9 @@
 {
   "name": "PracticaCalendario",
   "dependencies": {
-    "@polymer/polymer": "3.0.0",
-    "lit-element": "^2.2.0"
+    "lit-element": "^2.2.0",
+    "pwa-helpers": "^0.9.1",
+    "redux": "^4.0.1"
   },
   "devDependencies": {
     "@polymer/test-fixture": "4.0.2",
