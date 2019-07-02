@@ -6,7 +6,7 @@ class DiaElement extends LitElement {
 
   static get properties() {
     return {
-      day: {type: String} 
+      day: {type: String}
     };
   }
 
@@ -19,25 +19,26 @@ class DiaElement extends LitElement {
     return css`
     :host {
       display: flex;
+      justify-content: center;
+      align-items: center;
     }
-    
+
     div {
-      width: 15px;
-      height: 15px;
-      padding: 10px;
-      margin: 10px;
+      text-align: center;
+
+      width: 50px;
+      padding: 15px;
     }
 
     :hover {
-      
-      border: 2px solid grey
+      padding: 13px ;
+      border: 2px solid grey;
     }
-    
+
     :active {
-      /*background-color: blue;*/
-      border: 2px solid blue;  
+      border: 2px solid blue;
     }`;
-  } 
+  }
 
   /**
    * Implement `render` to define a template for your element.
@@ -57,6 +58,8 @@ class DiaElement extends LitElement {
       <div>${this.day}</div>
     `;
   }
+
+
 }
 // Register the new element with the browser.
 customElements.define('dia-element', DiaElement);

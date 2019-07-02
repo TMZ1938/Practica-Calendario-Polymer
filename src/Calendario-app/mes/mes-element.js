@@ -9,8 +9,17 @@ class MesElement extends LitElement {
     return css`
     :host {
       display: grid;
+      grid-template-columns: repeat(7, 50px );
+      grid-template-rows: repeat(6, 50px );
+
+
     }`;
-  } 
+  }
+
+  constructor() {
+    super();
+    this.days = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
+  }
 
   /**
    * Implement `render` to define a template for your element.
@@ -29,14 +38,7 @@ class MesElement extends LitElement {
       <!-- template content -->
       <!--p>Se muestra el mes</p>
       <flecha-element></flecha-element-->
-      <dia-element day="1"></dia-element>
-      <dia-element day="2"></dia-element>
-      <dia-element day="3"></dia-element>
-      <dia-element day="4"></dia-element>
-      <dia-element day="5"></dia-element>
-      <dia-element day="6"></dia-element>
-      <dia-element day="7"></dia-element>
-      <dia-element day="8"></dia-element>
+      ${ this.days.map(i => html`<dia-element day="${i}"></dia-element>`) }
     `;
   }
 }
