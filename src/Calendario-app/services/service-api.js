@@ -6,20 +6,20 @@ export class ServiceApi {
             new Date(Date.now()).getSeconds();
     }
 
-    static mesSiguiente() {
+    static getMesSiguiente() {
         return new Date(Date.now()).getHours() + ":" +
         new Date(Date.now()).getMinutes() + ":" +
         new Date(Date.now()).getSeconds();
     }
 
-    static mesPrevio() {
+    static getMesPrevio() {
         return new Date(Date.now()).getHours() + ":" +
         new Date(Date.now()).getMinutes() + ":" +
         new Date(Date.now()).getSeconds();
     }
 
-    static fechaCompleta() {
-
+    static getFechaCompleta() {
+        return new Date();
     }
 
 }
