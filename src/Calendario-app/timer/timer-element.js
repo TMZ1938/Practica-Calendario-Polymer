@@ -16,12 +16,16 @@ class TimerElement extends connect(store)(LitElement) {
 
   constructor() {
     super();
+    this.literalTimerActual = ServiceApi.getLiteralTimerDesdeFecha();
+    setInterval(() => {
+      this.literalTimerActual = ServiceApi.getLiteralTimerDesdeFecha();
+    }, 1000);
   }
 
-  stateChanged(state) {
+  /* stateChanged(state) {
     console.log('statechanged TimerElement', state);    
     this.literalTimerActual = ServiceApi.getLiteralTimerDesdeFecha(state.fechaCompleta);    
-  }
+  } */
   
 
   /**

@@ -14,14 +14,6 @@ export class ServiceApi {
         return new Date();
     }
 
-    static getLiteralMesSiguiente(date) {
-        date.setMonth(date.getMonth() + 1);
-        return getLiteralMesDesdeFecha(date);
-    }
-    static getLiteralMesPrevio(date) {
-        date.setMonth(date.getMonth() - 1);
-        return getLiteralMesDesdeFecha(date);
-    }
     static getLiteralMesDesdeFecha(date) {
         return mesesAnio[date.getMonth()];
     }
@@ -30,10 +22,19 @@ export class ServiceApi {
         return date.getFullYear();
     }
 
-    static getLiteralTimerDesdeFecha(date) {
-        return date.getHours() + ":"  
-            + date.getMinutes() + ":" 
-            + date.getSeconds();
+    static asegurarDosDigitos(value) {
+        const stringValue = String(value);
+        if (stringValue.length === 1) {
+          return "0" + stringValue;
+        }
+        return stringValue;
+    }
+
+    static getLiteralTimerDesdeFecha() {
+        const currentTime = new Date();
+        return this.asegurarDosDigitos(currentTime.getHours()) + ":"  
+            + this.asegurarDosDigitos(currentTime.getMinutes()) + ":" 
+            + this.asegurarDosDigitos(currentTime.getSeconds());
     }
 
 }
