@@ -1,10 +1,17 @@
 // Import the LitElement base class and html helper function
-import { LitElement, html } from 'lit-element';
-import { mesSiguiente, mesPrevio } from '../../redux/actions/actions';
-import { store } from '../../redux/store';
+import { LitElement, html, css } from 'lit-element';
+import { mesSiguiente, mesPrevio } from '../redux/actions/actions';
+import { store } from '../redux/store';
 
 // Extend the LitElement base class
 class FlechaElement extends LitElement {
+
+  static get styles() {
+    return css`
+    :host {
+      display: flex;
+    }`;
+  }
 
   mesSiguiente() {
     store.dispatch(mesSiguiente());
