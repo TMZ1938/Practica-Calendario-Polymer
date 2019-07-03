@@ -16,13 +16,13 @@ class CalendarioApp extends connect(store)(LitElement) {
 
   static get properties() {
     return {
-      date: { type: String }
+      fechaSeleccionada: { type: String }
     };
   }
 
   constructor() {
     super();
-    this._date = '';
+    this._fechaSeleccionada = '';
   }
 
   static get styles() {
@@ -31,10 +31,7 @@ class CalendarioApp extends connect(store)(LitElement) {
       display: grid;
     }`;
   }
-  stateChanged(state) {
-    console.log('statechanged CalendarioApp', state);
-    this.date = state.date;
-  }
+
 
   /**
    * Implement `render` to define a template for your element.
@@ -55,7 +52,6 @@ class CalendarioApp extends connect(store)(LitElement) {
           display: block;
         }
       </style>
-      <h1>${this.date}</h1>
       <timer-element></timer-element>
       <fecha-completa-element></fecha-completa-element>
       <flecha-element></flecha-element>

@@ -35,8 +35,8 @@ class FlechaElement extends LitElement {
      */
     return html`
     <hr>
-    <button @click="${this.mesSiguiente}">Subir Mes</button>
-    <button @click="${this.mesPrevio}">Bajar Mes</button>
+    <button @click="${this.mesSiguiente}">▲</button>
+    <button @click="${this.mesPrevio}">▼</button>
     `;
   }
 }

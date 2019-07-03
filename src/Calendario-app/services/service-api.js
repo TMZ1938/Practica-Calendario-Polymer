@@ -2,12 +2,6 @@ const mesesAnio = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio
 
 export class ServiceApi {
   
-    static getTime() {
-        return new Date(Date.now()).getHours() + ":" +
-            new Date(Date.now()).getMinutes() + ":" +
-            new Date(Date.now()).getSeconds();
-    }
-
     static getMesSiguienteFechaCompleta(date) {
         return new Date(date.setMonth(date.getMonth() + 1));
     }
@@ -16,20 +10,30 @@ export class ServiceApi {
         return new Date(date.setMonth(date.getMonth() - 1));
     }
 
-    static getFechaCompleta() {
+    static getFechaCompletaActual() {
         return new Date();
     }
 
     static getLiteralMesSiguiente(date) {
         date.setMonth(date.getMonth() + 1);
-        return mesesAnio[date.getMonth()];
+        return getLiteralMesDesdeFecha(date);
     }
     static getLiteralMesPrevio(date) {
         date.setMonth(date.getMonth() - 1);
-        return mesesAnio[date.getMonth()];
+        return getLiteralMesDesdeFecha(date);
     }
     static getLiteralMesDesdeFecha(date) {
         return mesesAnio[date.getMonth()];
+    }
+
+    static getLiteralAnioDesdeFecha(date) {
+        return date.getFullYear();
+    }
+
+    static getLiteralTimerDesdeFecha(date) {
+        return date.getHours() + ":"  
+            + date.getMinutes() + ":" 
+            + date.getSeconds();
     }
 
 }

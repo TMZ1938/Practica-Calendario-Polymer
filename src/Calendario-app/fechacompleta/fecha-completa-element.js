@@ -8,17 +8,21 @@ import { ServiceApi } from '../services/service-api';
 // Extend the LitElement base class
 class FechaCompletaElement extends connect(store)(LitElement) {
 
+  static get properties() {
+    return {
+      literalMesActual: { type: String },
+      literalAnioActual: { type: String },
+    };
+  }
+
   constructor() {
-    super();
-    this._date = '';
-    this.literalMesActual = ''
+    super();    
   }
 
   stateChanged(state) {
     console.log('statechanged FechaCompletaElement', state);
-    this.date = state.date;
-    this.literalMesActual = ServiceApi.getLiteralMesDesdeFecha(this.date);
-    // Llamar a update
+    this.literalMesActual = ServiceApi.getLiteralMesDesdeFecha(state.fechaCompleta);
+    this.literalAnioActual = ServiceApi.getLiteralAnioDesdeFecha(state.fechaCompleta);
   }
   /**
    * Implement `render` to define a template for your element.
@@ -35,7 +39,7 @@ class FechaCompletaElement extends connect(store)(LitElement) {
      */
     return html`
       <!-- template content -->
-      <h1>${this.literalMesActual}</h1>
+      <h1>${this.literalMesActual} de ${this.literalAnioActual}</h1>      
     `;
   }
 }

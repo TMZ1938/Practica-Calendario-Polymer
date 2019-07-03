@@ -1,7 +1,8 @@
 import { ServiceApi } from '../../services/service-api';
 // definimos un estado inicial. Si no se tiene estado, al arrancar la aplicación, se tomarán estos valores.
 const estadoInicial = {
-  date: ServiceApi.getFechaCompleta()
+  fechaSeleccionada: '',
+  fechaCompleta: ServiceApi.getFechaCompletaActual()
 }
 
 // creamos y exportamos la función del reducer
@@ -10,13 +11,18 @@ export const reducer = (state = estadoInicial, action) => {
     case "MES_SIGUIENTE":
       return {
         ...state,
-        date: ServiceApi.getMesSiguienteFechaCompleta(state.date) //Sumar un mes a la fecha actual
+        fechaCompleta: ServiceApi.getMesSiguienteFechaCompleta(state.fechaCompleta)
       }
     case "MES_PREVIO":
         return {
           ...state,
-          date: ServiceApi.getMesPrevioFechaCompleta(state.date) //Restar un mes a la fecha actual
-        }    
+          fechaCompleta: ServiceApi.getMesPrevioFechaCompleta(state.fechaCompleta)
+      }
+    case "DIA_SELECCIONADO":
+      return {
+        ...state,
+        fechaSeleccionada: ServiceApi.getFechaCompletaActual()
+      }
     default:
       return state;
   }

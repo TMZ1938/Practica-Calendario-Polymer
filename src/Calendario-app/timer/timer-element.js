@@ -1,8 +1,28 @@
 // Import the LitElement base class and html helper function
 import { LitElement, html } from 'lit-element';
+import { connect } from 'pwa-helpers';
+import { store } from '../redux/store';
+
+import { ServiceApi } from '../services/service-api';
 
 // Extend the LitElement base class
-class TimerElement extends LitElement {
+class TimerElement extends connect(store)(LitElement) {
+
+  static get properties() {
+    return {
+      literalTimerActual: { type: String }
+    };
+  }
+
+  constructor() {
+    super();
+  }
+
+  stateChanged(state) {
+    console.log('statechanged TimerElement', state);    
+    this.literalTimerActual = ServiceApi.getLiteralTimerDesdeFecha(state.fechaCompleta);    
+  }
+  
 
   /**
    * Implement `render` to define a template for your element.
@@ -19,7 +39,7 @@ class TimerElement extends LitElement {
      */
     return html`
       <!-- template content -->
-      <p>Se muestra el timer</p>
+      <h1>${this.literalTimerActual}</h1>
     `;
   }
 }
