@@ -1,18 +1,43 @@
 // Import the LitElement base class and html helper function
-import { LitElement, html } from 'lit-element';
+import { LitElement, html, css } from 'lit-element';
 
 // Extend the LitElement base class
 class DiaElement extends LitElement {
 
   static get properties() {
     return {
-      day: {type: String} 
+      day: {type: String}
     };
   }
 
   constructor() {
     super();
     this._day = '';
+  }
+
+  static get styles() {
+    return css`
+    :host {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    div {
+      text-align: center;
+
+      width: 50px;
+      padding: 15px;
+    }
+
+    :hover {
+      padding: 13px ;
+      border: 2px solid grey;
+    }
+
+    :active {
+      border: 2px solid blue;
+    }`;
   }
 
   /**
@@ -30,9 +55,11 @@ class DiaElement extends LitElement {
      */
     return html`
       <!-- template content -->
-      <p>Se muestra el día</p>
+      <div>${this.day}</div>
     `;
   }
+
+
 }
 // Register the new element with the browser.
 customElements.define('dia-element', DiaElement);
